@@ -1,23 +1,20 @@
-# TEST GITHUB PUSH
+# import necessary packages
 from textblob import TextBlob
 import nltk
-nltk.download('punkt_tab')
-nltk.download('averaged_perceptron_tagger_eng')
 
+# run the following 2 lines of code once before you set up project, then can comment out
+# nltk.download('punkt_tab')
+# nltk.download('averaged_perceptron_tagger_eng')
+
+# placeholder to put your sample text that will be run through sentiment analysis
 text = """
-I love unicorns. I love my mom.
-
+Murder.
 """
 
+# create a TextBlob object using the TextBlob package
 blob = TextBlob(text)
-blob.tags  # [('The', 'DT'), ('titular', 'JJ'),
-#  ('threat', 'NN'), ('of', 'IN'), ...]
 
-blob.noun_phrases  # WordList(['titular threat', 'blob',
-#            'ultimate movie monster',
-#            'amoeba-like mass', ...])
-
+# iterate through each sentence in the TextBlob object and print out the 
+# sentiment polarity score
 for sentence in blob.sentences:
     print(sentence.sentiment.polarity)
-# 0.060
-# -0.341
