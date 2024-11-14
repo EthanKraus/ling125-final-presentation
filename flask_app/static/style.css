@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-bottom: 2em;
+}
+
+label, textarea, button {
+    margin: 0.5em 0;
+}
+
+textarea {
+    padding: 0.5em;
+    resize: none;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 0.5em;
+    border: none;
+}
+
+.result {
+    background-color: #f4f4f4;
+    padding: 1em;
+    border-radius: 5px;
+    text-align: center;
+}

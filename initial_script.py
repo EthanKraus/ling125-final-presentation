@@ -8,8 +8,11 @@ import nltk
 
 # placeholder to put your sample text that will be run through sentiment analysis
 text = """
-Murder.
+I hate my life and I want to kill.
 """
+
+# Positive response: I love my mother and I am so happy.
+# Negative response: I hate my life and I want to kill.
 
 # create a TextBlob object using the TextBlob package
 blob = TextBlob(text)
@@ -17,4 +20,5 @@ blob = TextBlob(text)
 # iterate through each sentence in the TextBlob object and print out the 
 # sentiment polarity score
 for sentence in blob.sentences:
-    print(sentence.sentiment.polarity)
+    print("Polarity score: ", sentence.sentiment.polarity)
+
