@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header h1 {
+    color: #3492eb;
+}
+
+form {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #3492eb;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3492eb;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e9db91;
+    border-left: 6px solid #ebcf34;
+    max-width: 400px;
+}
+
+.polarity-legend {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+    max-width: 400px;
+}
+
+.polarity-legend h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.polarity-legend ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.polarity-legend li {
+    margin: 5px 0;
+}
+
+.polarity-legend li strong {
+    color: #555;
+}

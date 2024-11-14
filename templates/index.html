@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Polarity Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Text Polarity Analyzer</h1>
+    </header>
+
+    <main>
+        <form action="/analyze" method="post">
+            <label for="text">Enter text:</label>
+            <textarea id="text" name="text" rows="4" required>{{ text if text else "" }}</textarea>
+            <button type="submit">Analyze</button>
+        </form>
+
+        {% if polarity is not none %}
+            <div class="result">
+                <p>Polarity Score: {{ polarity }}</p>
+                {% if polarity >= -1.0 and polarity <= -0.6 %}
+                    <p>Very Negative!</p>
+                {% elif polarity >= -0.6 and polarity <= -0.2 %}
+                    <p>Somewhat Negative.</p>
+                {% elif polarity >= -0.2 and polarity <= 0.2 %}
+                    <p>Neutral.</p>
+                {% elif polarity >= 0.2 and polarity <= 0.6 %}
+                    <p>Somewhat Positive.</p>
+                {% else %}
+                    <p>Very Positive!</p>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        <!-- Polarity Score Legend Box -->
+        <div class="polarity-legend">
+            <h2>Polarity Score Ranges</h2>
+            <ul>
+                <li><strong>Very Negative:</strong> -1.0 to -0.6</li>
+                <li><strong>Somewhat Negative:</strong> -0.6 to -0.2</li>
+                <li><strong>Neutral:</strong> -0.2 to 0.2</li>
+                <li><strong>Somewhat Positive:</strong> 0.2 to 0.6</li>
+                <li><strong>Very Positive:</strong> 0.6 to 1.0</li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>
